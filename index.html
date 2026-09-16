@@ -1,118 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>GhanaMarket</title>
+
     <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    text-align: center;
-    padding: 20px;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
 
-h1 {
-    color: green;
-    font-size: 40px;
-}<body>
+        h1 {
+            color: green;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
 
-    <h1>Welcome to GhanaMarket</h1>
+        p {
+            color: #555;
+            font-size: 18px;
+        }
 
-</body>
-</html>
+        input {
+            width: 80%;
+            max-width: 500px;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid gray;
+            font-size: 16px;
+            margin: 20px 0;
+        }
 
-input {
-    width: 80%;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid gray;
-    font-size: 16px;
-}
+        .products {
+            max-width: 600px;
+            margin: auto;
+        }
 
-li {
-    list-style: none;
-    background: white;
-    margin: 10px;
-    padding: 15px;
-    border-radius: 10px;
-}
+        .product {
+            background: white;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
 
-button {
-    background: green;
-    color: white;
-    padding: 15px 25px;
-    border: none;
-    border-radius: 10px;
-    margin: 10px;
-}
-</style>
-    <style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f5f5f5;
-        text-align: center;
-        padding: 20px;
-    }
+        .product h2 {
+            color: #222;
+            margin: 0 0 10px;
+        }
 
-    h1 {
-        color: green;
-        font-size: 40px;
-    }
+        .price {
+            color: green;
+            font-size: 20px;
+            font-weight: bold;
+        }
 
-    input {
-        width: 80%;
-        padding: 15px;
-        border-radius: 10px;
-        border: 1px solid gray;
-        font-size: 16px;
-    }
+        button {
+            background: green;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
-    li {
-        list-style: none;
-        background: white;
-        margin: 10px;
-        padding: 15px;
-        border-radius: 10px;
-    }
+        button:hover {
+            background: darkgreen;
+        }
 
-    button {
-        background: green;
-        color: white;
-        padding: 15px 25px;
-        border: none;
-        border-radius: 10px;
-        margin: 10px;
-    }
-</style>
+        footer {
+            margin-top: 40px;
+            color: #777;
+        }
+    </style>
 </head>
 
 <body>
 
     <h1>🇬🇭 GhanaMarket</h1>
 
-    <h2>Buy and Sell Anything in Ghana</h2>
+    <p>Buy and sell products in Ghana</p>
 
-    <p>
-        GhanaMarket connects buyers and sellers across Ghana.
-    </p>
+    <input type="text" placeholder="Search for products...">
 
-    <input type="text" placeholder="Search products...">
+    <div class="products">
 
-    <h2>Categories</h2>
+        <div class="product">
+            <h2>Samsung Galaxy Phone</h2>
+            <p class="price">₵3,500</p>
+            <button>View Product</button>
+        </div>
 
-    <ul>
-        <li>📱 Phones & Electronics</li>
-        <li>👕 Fashion & Clothing</li>
-        <li>🚗 Cars & Vehicles</li>
-        <li>🏠 Houses & Property</li>
-        <li>🛒 General Products</li>
-    </ul>
+        <div class="product">
+            <h2>Nike Sneakers</h2>
+            <p class="price">₵850</p>
+            <button>View Product</button>
+        </div>
 
-    <h2>Featured Products</h2>
+        <div class="product">
+            <h2>HP Laptop</h2>
+            <p class="price">₵5,200</p>
+            <button>View Product</button>
+        </div>
 
-    <p>iPhones, laptops, cars, clothes and more coming soon.</p>
+    </div>
 
-    <button>Start Selling</button>
-    <button>Shop Now</button>
+    <footer>
+        <p>© 2026 GhanaMarket</p>
+    </footer>
 
 </body>
+
 </html>
