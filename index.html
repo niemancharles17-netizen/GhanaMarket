@@ -1,4 +1,4 @@
-[9/17/2026 3:18 AM] America First: <!DOCTYPE html>
+[9/17/2026 3:26 AM] America First: <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -18,310 +18,237 @@ body {
     color: #222;
 }
 
-/* HEADER */
 header {
-    background: #008000;
+    background: #087f23;
     color: white;
-    padding: 20px;
     text-align: center;
+    padding: 30px 15px 40px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 32px;
+    font-size: 42px;
 }
 
 header p {
-    margin: 8px 0 15px;
+    font-size: 22px;
+    margin: 15px 0 25px;
 }
 
 .cart-button {
-    background: #ffcc00;
+    background: #ffd43b;
     color: #111;
     border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: 16px;
+    border-radius: 18px;
+    padding: 20px 35px;
+    font-size: 25px;
     font-weight: bold;
     cursor: pointer;
 }
 
 .cart-button:hover {
-    background: #ffd633;
+    transform: scale(1.03);
 }
 
-/* MAIN */
 .container {
     max-width: 1100px;
     margin: auto;
-    padding: 20px;
+    padding: 30px 20px;
 }
 
-/* SEARCH */
 .search {
     width: 100%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 18px;
+    font-size: 20px;
+    margin-bottom: 25px;
 }
 
-/* CATEGORIES */
 .categories {
     display: flex;
-    gap: 10px;
     flex-wrap: wrap;
-    margin-bottom: 25px;
+    gap: 12px;
+    margin-bottom: 30px;
 }
 
 .category {
     border: none;
     background: white;
-    padding: 10px 16px;
-    border-radius: 20px;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 17px;
     cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
 }
 
-.category:hover {
-    background: #008000;
+.category.active {
+    background: #087f23;
     color: white;
 }
 
-/* PRODUCTS */
 .products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 20px;
+    gap: 22px;
 }
 
 .product {
     background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
-    transition: transform 0.2s;
-}
-
-.product:hover {
-    transform: translateY(-4px);
+    border-radius: 18px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .product-image {
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
-    background: #eee;
-}
-
-.product-info {
-    padding: 15px;
+    height: 150px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #e9f7e9, #fff4c2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 75px;
+    margin-bottom: 15px;
 }
 
 .product h3 {
-    margin: 0 0 8px;
+    margin: 10px 0;
+    font-size: 21px;
 }
 
 .price {
-    color: #008000;
-    font-size: 20px;
+    color: #087f23;
+    font-size: 21px;
     font-weight: bold;
-    margin-bottom: 12px;
+    margin: 10px 0;
 }
 
-.product-buttons {
-    display: flex;
-    gap: 8px;
-}
-
-.product-buttons button {
-    flex: 1;
+.product button {
+    width: 100%;
     border: none;
-    padding: 10px;
-    border-radius: 6px;
+    border-radius: 10px;
+    padding: 13px;
+    margin-top: 8px;
+    font-size: 16px;
     cursor: pointer;
-    font-weight: bold;
 }
 
 .view-button {
-    background: #222;
-    color: white;
+    background: #eee;
 }
 
 .buy-button {
-    background: #008000;
+    background: #087f23;
     color: white;
 }
 
-.product-buttons button:hover {
-    opacity: 0.85;
+.empty {
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+    color: #777;
 }
 
-/* CART */
-.cart-panel {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 380px;
-    max-width: 100%;
-    height: 100%;
-    background: white;
-    z-index: 1000;
-    box-shadow: -4px 0 15px rgba(0,0,0,0.25);
-    padding: 20px;
-    overflow-y: auto;
-}
-
-.cart-panel.active {
-    display: block;
-}
-
-.cart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 15px;
-}
-
-.close-cart {
-    border: none;
-    background: #ddd;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.cart-item {
-    display: flex;
-    gap: 10px;
-    padding: 15px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.cart-item img {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.cart-item-info {
-    flex: 1;
-}
-
-.cart-item-info h4 {
-    margin: 0 0 5px;
-}
-
-.quantity {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 8px;
-}
-
-.quantity button {
-    width: 28px;
-    height: 28px;
-    border: none;
-    background: #008000;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.remove {
-    border: none;
-    background: #d00;
-    color: white;
-    padding: 5px 8px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.cart-total {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.checkout {
-    width: 100%;
-    padding: 14px;
-    margin-top: 15px;
-    border: none;
-    background: #008000;
-    color: white;
-    border-radius: 8px;
-    font-size: 17px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.checkout:hover {
-    background: #006600;
-}
-
-/* OVERLAY */
-.overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-[9/17/2026 3:18 AM] America First: background: rgba(0,0,0,0.5);
-    z-index: 999;
-}
-
-.overlay.active {
-    display: block;
-}
-
-/* FOOTER */
 footer {
     background: #222;
     color: white;
     text-align: center;
-    padding: 25px;
+    padding: 35px 15px;
     margin-top: 40px;
 }
 
 footer p {
-    margin: 6px;
+    margin: 10px;
+    font-size: 19px;
 }
 
-/* MOBILE */
+/* Cart window */
+
+.cart-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+}
+
+.cart-box {
+    background: white;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 18px;
+    padding: 25px;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.cart-box h2 {
+    margin-top: 0;
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.quantity button {
+    border: none;
+    background: #087f23;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.checkout {
+    width: 100%;
+    padding: 15px;
+    background: #ff9800;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
 @media (max-width: 600px) {
+
     header h1 {
-        font-size: 26px;
+        font-size: 34px;
     }
 
-    .products {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
+    header p {
+        font-size: 19px;
+    }
+
+    .cart-button {
+        font-size: 21px;
+        padding: 17px 28px;
+    }
+
+    .container {
+        padding: 20px 15px;
     }
 
     .product-image {
-        height: 140px;
-    }
-
-    .product-info {
-        padding: 10px;
-    }
-
-    .product h3 {
-        font-size: 16px;
-    }
-
-    .price {
-        font-size: 17px;
-    }
-
-    .product-buttons {
-        flex-direction: column;
+        height: 130px;
     }
 }
 </style>
@@ -330,219 +257,239 @@ footer p {
 <body>
 
 <header>
-    <h1>🇬🇭 GhanaMarket</h1>
-    <p>Buy • Sell • Shop in Ghana</p>
 
-    <button class="cart-button" onclick="openCart()">
-        🛒 Cart (<span id="cartCount">0</span>)
-    </button>
+<h1>🇬🇭 GhanaMarket</h1>
+
+<p>Buy • Sell • Shop in Ghana</p>
+
+<button class="cart-button" onclick="viewCart()">
+🛒 Cart (<span id="cartCount">0</span>)
+</button>
+
 </header>
+[9/17/2026 3:26 AM] America First: <div class="container">
 
-<div class="container">
+<input
+    type="text"
+    id="search"
+    class="search"
+    placeholder="🔎 Search for products..."
+    oninput="searchProducts()"
+>
 
-    <input
-        type="text"
-        id="searchInput"
-        class="search"
-        placeholder="🔎 Search for products..."
-        oninput="searchProducts()"
-    >
 
-    <div class="categories">
-        <button class="category" onclick="filterCategory('All')">All</button>
-        <button class="category" onclick="filterCategory('Phones')">📱 Phones</button>
-        <button class="category" onclick="filterCategory('Fashion')">👕 Fashion</button>
-        <button class="category" onclick="filterCategory('Electronics')">💻 Electronics</button>
-        <button class="category" onclick="filterCategory('Home')">🏠 Home</button>
-    </div>
+<div class="categories">
 
-    <div id="products" class="products"></div>
+<button class="category active" onclick="filterCategory('All', this)">
+All
+</button>
+
+<button class="category" onclick="filterCategory('Phones', this)">
+📱 Phones
+</button>
+
+<button class="category" onclick="filterCategory('Fashion', this)">
+👕 Fashion
+</button>
+
+<button class="category" onclick="filterCategory('Electronics', this)">
+💻 Electronics
+</button>
+
+<button class="category" onclick="filterCategory('Home', this)">
+🏠 Home
+</button>
+
+</div>
+
+
+<div id="products" class="products"></div>
 
 </div>
 
-<!-- CART -->
-<div id="overlay" class="overlay" onclick="closeCart()"></div>
-
-<div id="cartPanel" class="cart-panel">
-
-    <div class="cart-header">
-        <h2>🛒 Your Cart</h2>
-
-        <button class="close-cart" onclick="closeCart()">×</button>
-    </div>
-
-    <div id="cartItems"></div>
-
-    <div class="cart-total">
-        Total: GH₵<span id="cartTotal">0.00</span>
-    </div>
-
-    <button class="checkout" onclick="checkout()">
-        Proceed to Checkout
-    </button>
-
-</div>
 
 <footer>
-    <p>© 2026 GhanaMarket</p>
-    <p>Buy • Sell • Shop in Ghana 🇬🇭</p>
+
+<p>© 2026 GhanaMarket</p>
+
+<p>Buy • Sell • Shop in Ghana 🇬🇭</p>
+
 </footer>
+
+
+<!-- CART -->
+
+<div id="cartModal" class="cart-modal">
+
+<div class="cart-box">
+
+<span class="close" onclick="closeCart()">×</span>
+
+<h2>🛒 Your Cart</h2>
+
+<div id="cartItems"></div>
+
+<h3>
+Total: GH₵ <span id="cartTotal">0.00</span>
+</h3>
+
+<button class="checkout" onclick="checkout()">
+Proceed to Checkout
+</button>
+
+</div>
+
+</div>
+
 
 <script>
 
-/* PRODUCTS */
-
 const products = [
-    {
-        id: 1,
-        name: "iPhone 15",
-        price: 8500,
-        category: "Phones",
-        image: "https://images.unsplash.com/photo-1696446701796-da61225697cc?auto=format&fit=crop&w=600&q=80"
-    },
 
-    {
-        id: 2,
-        name: "Samsung Galaxy",
-        price: 6200,
-        category: "Phones",
-        image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=600&q=80"
-    },
+{
+    id: 1,
+    name: "iPhone 15",
+    price: 8500,
+    category: "Phones",
+    icon: "📱"
+},
 
-    {
-        id: 3,
-        name: "Laptop Computer",
-        price: 7500,
-        category: "Electronics",
-        image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80"
-    },
+{
+    id: 2,
+    name: "Samsung Galaxy",
+    price: 6200,
+    category: "Phones",
+    icon: "📱"
+},
 
-    {
-        id: 4,
-        name: "Wireless Headphones",
-        price: 850,
-        category: "Electronics",
-        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80"
-    },
+{
+    id: 3,
+    name: "Men's T-Shirt",
+    price: 180,
+    category: "Fashion",
+    icon: "👕"
+},
 
-    {
-        id: 5,
-        name: "Men's T-Shirt",
-        price: 180,
-        category: "Fashion",
-        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80"
-    },
+{
+    id: 4,
+    name: "Women's Dress",
+    price: 350,
+    category: "Fashion",
+    icon: "👗"
+},
 
-    {
-        id: 6,
-        name: "Women's Handbag",
-        price: 450,
-        category: "Fashion",
-        image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80"
-    },
+{
+    id: 5,
+    name: "Laptop",
+    price: 7500,
+    category: "Electronics",
+    icon: "💻"
+},
 
-    {
-        id: 7,
-        name: "Modern Chair",
-        price: 650,
-        category: "Home",
-        image: "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=600&q=80"
-    },
+{
+    id: 6,
+    name: "Wireless Headphones",
+    price: 450,
+    category: "Electronics",
+    icon: "🎧"
+},
 
-    {
-        id: 8,
-        name: "Table Lamp",
-        price: 220,
-        category: "Home",
-        image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80"
-    }
+{
+    id: 7,
+    name: "Smart TV",
+    price: 4200,
+    category: "Electronics",
+    icon: "📺"
+},
+
+{
+    id: 8,
+    name: "Sofa Set",
+    price: 5500,
+    category: "Home",
+    icon: "🛋️"
+},
+
+{
+    id: 9,
+    name: "Kitchen Blender",
+    price: 650,
+    category: "Home",
+    icon: "🍹"
+},
+
+{
+    id: 10,
+    name: "Sneakers",
+    price: 500,
+    category: "Fashion",
+    icon: "👟"
+}
+
 ];
 
 
-/* CART */
+let cart = JSON.parse(localStorage.getItem("ghanaMarketCart")) || [];
 
-let cart = JSON.parse(localStorage.
-[9/17/2026 3:18 AM] America First: getItem("ghanaMarketCart")) || [];
+let currentCategory = "All";
 
-
-/* DISPLAY PRODUCTS */
 
 function displayProducts(list = products) {
 
-    const productsContainer = document.getElementById("products");
-
-    productsContainer.innerHTML = "";
+    const container = document.getElementById("products");
 
     if (list.length === 0) {
 
-        productsContainer.innerHTML =
-            "<p>No products found.</p>";
+        container.innerHTML =
+        '<div class="empty">No products found.</div>';
 
         return;
     }
 
-    list.forEach(product => {
+    container.innerHTML = list.map(product => `
 
-        productsContainer.innerHTML += `
+        <div class="product">
 
-            <div class="product">
-
-                <img
-                    class="product-image"
-                    src="${product.image}"
-                    alt="${product.name}"
-                >
-
-                <div class="product-info">
-
-                    <h3>${product.name}</h3>
-
-                    <div class="price">
-                        GH₵${product.price.toLocaleString()}
-                    </div>
-
-                    <div class="product-buttons">
-
-                        <button
-                            class="view-button"
-                            onclick="viewProduct(${product.id})"
-                        >
-                            View
-                        </button>
-
-                        <button
-                            class="buy-button"
-                            onclick="addToCart(${product.id})"
-                        >
-                            Add to Cart
-                        </button>
-
-                    </div>
-
-                </div>
-
+            <div class="product-image">
+                ${product.icon}
             </div>
-        `;
-    });
+
+            <h3>${product.name}</h3>
+
+            <div class="price">
+                GH₵ ${product.price.toLocaleString()}
+            </div>
+
+            <button
+                class="view-button"
+                onclick="viewProduct('${product.name}', ${product.price})">
+                View Product
+            </button>
+
+            <button
+                class="buy-button"
+                onclick="addToCart(${product.id})">
+                🛒 Add to Cart
+            </button>
+
+        </div>
+
+    `).join("");
 }
 
 
-/* ADD TO CART */
+function addToCart(id) {
 
-function addToCart(productId) {
+    const existing = cart.find(item => item.id === id);
 
-    const product = products.find(p => p.id === productId);
+    if (existing) {
 
-    const existingItem = cart.find(item => item.id === productId);
-
-    if (existingItem) {
-
-        existingItem.quantity++;
+        existing.quantity++;
 
     } else {
 
         cart.push({
-            ...product,
+            id: id,
             quantity: 1
         });
 
@@ -550,11 +497,9 @@ function addToCart(productId) {
 
     saveCart();
 
-    alert(product.name + " added to your cart! 🛒");
+    alert("Product added to your cart! 🛒");
 }
 
-
-/* SAVE CART */
 
 function saveCart() {
 
@@ -564,12 +509,8 @@ function saveCart() {
     );
 
     updateCartCount();
-
-    displayCart();
 }
 
-
-/* CART COUNT */
 
 function updateCartCount() {
 
@@ -578,124 +519,99 @@ function updateCartCount() {
         0
     );
 
-    document.getElementById("cartCount").innerText = count;
+    document.getElementById("cartCount").textContent = count;
 }
 
 
-/* OPEN CART */
+function viewProduct(name, price) {
 
-function openCart() {
-
-    document.getElementById("cartPanel")
-        .classList.add("active");
-
-    document.getElementById("overlay")
-        .classList.add("active");
-
-    displayCart();
+    alert(
+        name +
+        "\nPrice: GH₵ " +
+        price.toLocaleString()
+    );
 }
 
 
-/* CLOSE CART */
+function viewCart() {
 
-function closeCart() {
-
-    document.getElementById("cartPanel")
-        .classList.remove("active");
-
-    document.getElementById("overlay")
-        .classList.remove("active");
-}
-
-
-/* DISPLAY CART */
-
-function displayCart() {
+    const modal = document.getElementById("cartModal");
 
     const cartItems = document.getElementById("cartItems");
-
-    cartItems.innerHTML = "";
-
-    if (cart.length === 0) {
+[9/17/2026 3:26 AM] America First: if (cart.length === 0) {
 
         cartItems.innerHTML =
-            "<p>Your cart is empty.</p>";
+        "<p>Your cart is empty. 🛒</p>";
 
-        document.getElementById("cartTotal").innerText =
-            "0.00";
+        document.getElementById("cartTotal").textContent =
+        "0.00";
+
+        modal.style.display = "block";
 
         return;
     }
 
+
     let total = 0;
 
-    cart.forEach(item => {
+    cartItems.innerHTML = cart.map(item => {
 
-        total += item.price * item.quantity;
+        const product =
+        products.find(p => p.id === item.id);
 
-        cartItems.innerHTML += `
+        const itemTotal =
+        product.price * item.quantity;
 
-            <div class="cart-item">
+        total += itemTotal;
 
-                <img
-                    src="${item.image}"
-                    alt="${item.name}"
-                >
+        return `
 
-                <div class="cart-item-info">
+        <div class="cart-item">
 
-                    <h4>${item.name}</h4>
+            <div>
+                <strong>${product.icon} ${product.name}</strong>
+                <br>
+                GH₵ ${product.price.toLocaleString()}
+            </div>
 
-                    <div>
-                        GH₵${item.price.toLocaleString()}
-                    </div>
+            <div class="quantity">
 
-                    <div class="quantity">
+                <button onclick="changeQuantity(${product.id}, -1)">
+                    −
+                </button>
 
-                        <button
-                            onclick="changeQuantity(${item.id}, -1)"
-                        >
-                            −
-                        </button>
+                ${item.quantity}
 
-                        <span>${item.quantity}</span>
-
-                        <button
-                            onclick="changeQuantity(${item.id}, 1)"
-                        >
-                            +
-                        </button>
-
-                        <button
-                            class="remove"
-[9/17/2026 3:18 AM] America First: onclick="removeFromCart(${item.id})"
-                        >
-                            Remove
-                        </button>
-
-                    </div>
-
-                </div>
+                <button onclick="changeQuantity(${product.id}, 1)">
+                    +
+                </button>
 
             </div>
-        `;
-    });
 
-    document.getElementById("cartTotal").innerText =
-        total.toLocaleString(undefined, {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        });
+        </div>
+
+        `;
+
+    }).join("");
+
+
+    document.getElementById("cartTotal").textContent =
+    total.toLocaleString();
+
+    modal.style.display = "block";
 }
 
 
-/* CHANGE QUANTITY */
+function closeCart() {
 
-function changeQuantity(productId, amount) {
+    document.getElementById("cartModal").style.display =
+    "none";
+}
 
-    const item = cart.find(
-        item => item.id === productId
-    );
+
+function changeQuantity(id, amount) {
+
+    const item = cart.find(item => item.id === id);
 
     if (!item) return;
 
@@ -703,83 +619,52 @@ function changeQuantity(productId, amount) {
 
     if (item.quantity <= 0) {
 
-        cart = cart.filter(
-            item => item.id !== productId
-        );
+        cart = cart.filter(item => item.id !== id);
+
     }
 
     saveCart();
+
+    viewCart();
 }
 
-
-/* REMOVE FROM CART */
-
-function removeFromCart(productId) {
-
-    cart = cart.filter(
-        item => item.id !== productId
-    );
-
-    saveCart();
-}
-
-
-/* VIEW PRODUCT */
-
-function viewProduct(productId) {
-
-    const product = products.find(
-        p => p.id === productId
-    );
-
-    alert(
-        product.name +
-        "\n\nPrice: GH₵" +
-        product.price.toLocaleString() +
-        "\nCategory: " +
-        product.category
-    );
-}
-
-
-/* SEARCH */
 
 function searchProducts() {
 
     const search =
-        document.getElementById("searchInput")
-        .value
-        .toLowerCase();
+    document.getElementById("search")
+    .value
+    .toLowerCase();
 
-    const filtered = products.filter(product =>
-        product.name.toLowerCase().includes(search) ||
-        product.category.toLowerCase().includes(search)
-    );
+    const filtered = products.filter(product => {
 
-    displayProducts(filtered);
-}
+        const matchesSearch =
+        product.name.toLowerCase().includes(search);
 
+        const matchesCategory =
+        currentCategory === "All" ||
+        product.category === currentCategory;
 
-/* CATEGORY FILTER */
+        return matchesSearch && matchesCategory;
 
-function filterCategory(category) {
-
-    if (category === "All") {
-
-        displayProducts(products);
-
-        return;
-    }
-
-    const filtered = products.filter(
-        product => product.category === category
-    );
+    });
 
     displayProducts(filtered);
 }
 
 
-/* CHECKOUT */
+function filterCategory(category, button) {
+
+    currentCategory = category;
+
+    document.querySelectorAll(".category")
+    .forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+    searchProducts();
+}
+
 
 function checkout() {
 
@@ -790,28 +675,31 @@ function checkout() {
         return;
     }
 
-    const total = cart.reduce(
-        (sum, item) =>
-            sum + item.price * item.quantity,
-        0
-    );
-
     alert(
-        "Checkout\n\n" +
-        "Total: GH₵" +
-        total.toLocaleString() +
-        "\n\nYour checkout system can be connected to Mobile Money, card payments, or another payment provider next."
+        "Checkout is ready! 🛍️\n\n" +
+        "Your cart has been saved.\n" +
+        "Payment integration can be added next."
     );
 }
 
 
-/* START WEBSITE */
+window.onclick = function(event) {
+
+    const modal =
+    document.getElementById("cartModal");
+
+    if (event.target === modal) {
+
+        closeCart();
+
+    }
+
+};
+
 
 displayProducts();
 
 updateCartCount();
-
-displayCart();
 
 </script>
 
