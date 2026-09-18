@@ -107,6 +107,7 @@ footer {
 
     <div class="cart">
         🛒 Cart: <span id="cartCount">0</span>
+     <button onclick="viewCart()">View Cart</button>
     </div>
 </header>
 
@@ -222,8 +223,9 @@ Add to Cart
 <script>
 
 let cartCount = 0;
-
+let cart = [];
 function addToCart() {
+ cart.push("product");
     cartCount++;
     document.getElementById("cartCount").innerText=cartCount;
 
@@ -233,6 +235,9 @@ alert("Product added to your cart!");
 function viewProduct(name, price) {
     alert(name + " - " + price);
 }
+function viewCart() {
+    alert("Your cart has " + cartCount + " item(s).");
+} 
 
 </script>
 </body>
